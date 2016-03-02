@@ -133,9 +133,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))
-MEDIA_URL = '/media/'
-MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
+STATIC_ROOT = os.path.join(SITE_ROOT, 'static_root')
+STATICFILES_DIRS = (
+    os.path.join(SITE_ROOT, 'static_dist'),
+)
+
+# store static files locally and serve with whitenoise
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 # ALL AUTH

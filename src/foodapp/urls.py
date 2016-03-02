@@ -1,7 +1,12 @@
 # django
+from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
+from django.views.decorators.cache import cache_page
+
+# app
+from base import views as base_views
 
 # rest_framework
 from rest_framework_nested import routers
@@ -14,6 +19,8 @@ from posts.views import (
     PostUnCollectorView,
 )
 from users.views import AccountViewSet, UserView
+from base import views as base_views
+
 
 router = routers.SimpleRouter(trailing_slash=False)
 router.register(r'users', AccountViewSet)
@@ -31,4 +38,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # users
     url(r'^', include('users.urls')),
+    # app
+    url(r'^api/v1/getdata', base_views.ProtectedDataView.as_view(), name='protected_data'),
+    url(r'', cache_page(settings.PAGE_CACHE_SECONDS)(base_views.IndexView.as_view()), name='index'),
 ]

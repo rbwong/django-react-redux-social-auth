@@ -1,12 +1,12 @@
 from foodapp.settings.base import *
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+PAGE_CACHE_SECONDS = 1
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite'),
+        'NAME': os.path.join(SITE_ROOT, 'db.sqlite3'),
     }
 }
