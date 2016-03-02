@@ -1,8 +1,8 @@
-# Django React/Redux Base Project
+# Django + React/Redux + Social Authentication Base Project (Ongoing Project)
 
-This repository includes a boilerplate project used for all Seedstars Labs applications. It uses Django as backend and React as frontend. 
+I decided to create this project to incorporate Social Authentication in [Django React/Redux Base Project](https://github.com/Seedstars/django-react-redux-jwt-base)
 
-We build on the solders of giants with the following technologies:
+The project was built with the following technologies:
 
 **Frontend**
 
@@ -30,19 +30,12 @@ We build on the solders of giants with the following technologies:
 
 * [Django](https://www.djangoproject.com/)
 * [Django REST framework](http://www.django-rest-framework.org/) Django REST framework is a powerful and flexible toolkit for building Web APIs
-* [Django REST framework JSON Web Token](http://getblimp.github.io/django-rest-framework-jwt/) JSON Web Token Authentication support for Django REST Framework
+* [Django REST Auth](https://github.com/Tivix/django-rest-auth) for Authtentication
+* [Django All Auth](http://django-allauth.readthedocs.org/) for Social Authtentication
 * [WhiteNoise](http://whitenoise.evans.io/en/latest/django.html) to serve files efficiently from Django
-* [Prospector](http://prospector.landscape.io/en/master/) a complete Python static analysis tool
-* [Bandit](https://github.com/openstack/bandit) a security linter from OpenStack Security
-* [pytest](http://pytest.org/latest/) a mature full-featured Python testing tool
-* [Mock](http://www.voidspace.org.uk/python/mock/) mocking and testing Library
 * [Responses](https://github.com/getsentry/responses) a utility for mocking out the Python Requests library
 
 
-## Readme Notes
-
-* Command line starts with $, the command should run with user privileges
-* Command line starts with #, the command should run with root privileges
 
 ## Retrieve code 
 
@@ -58,24 +51,20 @@ Remember that when you copy this repository for a new project you need to add th
 
 ## Installation
 
-### NODEJS
-
-* `# wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -`
-* `# apt-get install --yes nodejs`
-
-### Main Project
-
 * `$ npm install`
-* `$ npm run dev`  # will run webpack with watch and compile code as it changes
+* `$ npm run dev`
 
-* `$ virtualenv -p /usr/bin/python3 virtualenv`
-* `$ source virtualenv/bin/activate`
 * `$ pip install -r py-requirements/dev.txt`
 
 * `$ cd src`
 * `$ python manage.py migrate`
-* `$ python manage.py loaddata fixtures.json`
 * `$ python manage.py runserver`
+
+## Post-Installation
+Now start your server, visit your admin pages (e.g. http://localhost:8000/admin/) and follow these steps:
+1. Add a Site for your domain, matching settings.SITE_ID (django.contrib.sites app).
+2. For each OAuth based provider, add a Social App (socialaccount app).
+3. Fill in the site and the OAuth app credentials obtained from the provider.
 
 ## Running
 
@@ -87,39 +76,3 @@ Run Django development http server
 
 * `$ cd src`
 * `$ python manage.py runserver`
-
-## Testing
-
-Frontend (javascript tests)
-
-* `$ ./scripts/test_local_frontend.sh`
-
-Backend (django/python tests)
-
-* `$ ./scripts/test_local_backend.sh`
-
-
-### Static analysis
-
-To make sure the code respects all coding guidelines you should run the statics analysis script before pushing any code.
-
-
-Frontend (javascript static analysis)
-
-* `$ ./scripts/static_validate_frontend.sh`
-
-Backend (django/python static analysis)
-
-* `$ ./scripts/static_validate_backend.sh`
-
-### Screenshots
-
-Here are some screenshots of the boilerplate project.
-
-![Screenshot02][2]  
-
-[2]: https://raw.githubusercontent.com/andrealmar/django-react-redux-jwt-base/master/screenshots/screenshot_02.png
-
-![Screenshot01][1]  
-
-[1]: https://raw.githubusercontent.com/andrealmar/django-react-redux-jwt-base/master/screenshots/screenshot_01.png
