@@ -62,8 +62,11 @@ Remember that when you copy this repository for a new project you need to add th
 
 ## Post-Installation
 Now start your server, visit your admin pages (e.g. http://localhost:8000/admin/) and follow these steps:
+
 1. Add a Site for your domain, matching settings.SITE_ID (django.contrib.sites app).
+
 2. For each OAuth based provider, add a Social App (socialaccount app).
+
 3. Fill in the site and the OAuth app credentials obtained from the provider.
 
 ## Running
