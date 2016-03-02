@@ -1,6 +1,6 @@
 # Django + React/Redux + Social Authentication Base Project (Ongoing Project)
 
-I decided to create this project to incorporate Social Authentication in [Django React/Redux Base Project](https://github.com/Seedstars/django-react-redux-jwt-base)
+I decided to create this project to incorporate Social Authentication in Seedstars' [Django React/Redux Base Project](https://github.com/Seedstars/django-react-redux-jwt-base)
 
 The project was built with the following technologies:
 
