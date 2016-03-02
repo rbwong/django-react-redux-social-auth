@@ -1,0 +1,1 @@
+from foodapp.settings.base import *
